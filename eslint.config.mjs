@@ -17,5 +17,6 @@ export default tseslint.config(eslint.configs.recommended, ...tseslint.configs.r
     "prefer-const": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
   },
 });
