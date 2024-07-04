@@ -4,7 +4,7 @@ import tseslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default tseslint.config(eslint.configs.recommended, ...tseslint.configs.recommended, eslintConfigPrettier, {
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  // extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   languageOptions: {
     globals: {
       ...globals.node,
@@ -13,7 +13,7 @@ export default tseslint.config(eslint.configs.recommended, ...tseslint.configs.r
   },
   rules: {
     // to enforce using type for object type definitions, can be type or interface
-    'consistent-type-definitions': ['error', 'type'],
+    // 'consistent-type-definitions': ['error', 'type'],
     'no-undef': 'error',
     'no-unused-vars': 'error',
     'no-console': 'warn',
