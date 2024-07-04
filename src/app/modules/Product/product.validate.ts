@@ -20,9 +20,7 @@ const inventoryValidationSchema = z.object({
     .int()
     .nonnegative(),
   // Add inStock validation. InStock must be a boolean. If quantity is 0, inStock must be false. If quantity is greater than 0, inStock must be true.
-  inStock: z.boolean().refine((value) => {
-    console.log(value);
-  }),
+  inStock: z.boolean(),
 });
 
 const productValidationSchema = z.object({
