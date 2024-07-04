@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
-app.use("/api/v1/", router);
+app.use("/api/", router);
 
 app.get("/", (req, res) => {
   res.send("Welcome to my bootcamp first assignment!");

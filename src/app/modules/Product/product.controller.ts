@@ -12,7 +12,7 @@ const createProductController = catchAsync(async (req, res) => {
   sendResponse<IProduct>(res, {
     statusCode: 201,
     success: true,
-    message: "Product created successfully",
+    message: "Product created successfully!",
     data: result,
   });
 });
@@ -25,7 +25,7 @@ const getAllProductsController = catchAsync(async (req, res) => {
   sendResponse<IProduct[]>(res, {
     statusCode: 200,
     success: true,
-    message: "All products fetched successfully",
+    message: "Products fetched successfully!",
     data: result,
   });
 });
@@ -39,7 +39,7 @@ const getProductByIdController = catchAsync(async (req, res) => {
   sendResponse<IProduct | null>(res, {
     statusCode: 200,
     success: true,
-    message: "Product fetched successfully",
+    message: "Product fetched successfully!",
     data: result,
   });
 });

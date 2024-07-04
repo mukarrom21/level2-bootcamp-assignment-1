@@ -6,7 +6,7 @@ import { ProductControllers } from "./product.controller";
 const router = Router();
 
 router.post(
-  "/create",
+  "/",
   validateRequest(ProductsValidationSchema.createNewProductSchema),
   ProductControllers.createProductController,
 );
