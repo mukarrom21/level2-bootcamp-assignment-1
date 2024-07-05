@@ -1,3 +1,4 @@
+import QueryBuilder from "../../builder/QueryBuilder";
 import { IProduct } from "./product.interface";
 import { ProductModel } from "./product.model";
 
@@ -9,9 +10,17 @@ const createProductService = async (product: IProduct) => {
 };
 
 // get all products service
-const getAllProductsService = async () => {
-  const products = await ProductModel.find();
-  return products;
+const getAllProductsService = async (query: Record<string, unknown>) => {
+  const searchableFields = ["name", "description", "category", "tags"]; // Searchable fields
+
+  let searchQuery = {};
+  if (query.searchTerm) {
+    searchQuery = { $or: searchableFields.map((field) => ({ [field]: { $regex: query.searchTerm, $options: "i" } })) };
+  }
+
+  const result = await ProductModel.find(searchQuery);
+
+  return result;
 };
 
 // get product by id service

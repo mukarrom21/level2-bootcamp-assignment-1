@@ -37,6 +37,7 @@ const productSchema = new Schema<IProduct>(
   {
     name: {
       type: String,
+      unique: true,
       required: true,
     },
     description: {

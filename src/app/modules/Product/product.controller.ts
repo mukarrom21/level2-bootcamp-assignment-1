@@ -19,7 +19,8 @@ const createProductController = catchAsync(async (req, res) => {
 
 // get all products controller
 const getAllProductsController = catchAsync(async (req, res) => {
-  const result = await ProductServices.getAllProductsService();
+  const query = req.query;
+  const result = await ProductServices.getAllProductsService(query);
 
   // send response
   sendResponse<IProduct[]>(res, {
