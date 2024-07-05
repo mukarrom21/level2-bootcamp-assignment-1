@@ -11,17 +11,17 @@ router.post("/", validateRequest(OrderValidations.createOrderValidationSchema), 
 // get all orders route
 router.get("/", OrderControllers.getAllOrdersController);
 
-// get order by id route
-router.get("/:orderId", OrderControllers.getOrderByIdController);
+// // get order by id route
+// router.get("/:orderId", OrderControllers.getOrderByIdController);
 
-// update order route
-router.patch(
-  "/:orderId",
-  validateRequest(OrderValidations.updateOrderValidationSchema),
-  OrderControllers.updateOrderController,
-);
+// // update order route
+// router.patch(
+//   "/:orderId",
+//   validateRequest(OrderValidations.updateOrderValidationSchema),
+//   OrderControllers.updateOrderController,
+// );
 
-// delete order route
-router.delete("/:orderId", OrderControllers.deleteOrderController);
+// // delete order route
+// router.delete("/:orderId", OrderControllers.deleteOrderController);
 
 export const OrderRoutes = router;

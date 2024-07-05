@@ -18,7 +18,7 @@ router.get("/", ProductControllers.getAllProductsController);
 router.get("/:productId", ProductControllers.getProductByIdController);
 
 // update product route
-router.patch(
+router.put(
   "/:productId",
   // validateRequest(ProductsValidationSchema.updateProductSchema),
   ProductControllers.updateProductController,
