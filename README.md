@@ -16,7 +16,7 @@ To run the project locally follow these steps:
    npm install
    ```
 
-3. and `.env` file in the root of the project.
+3. create `.env` file in the root of the project.
 4. add `MONGO_URI= ure_mongodb_atlas_link` in `.env` file.
 
 5. Run the project. Run the command:
