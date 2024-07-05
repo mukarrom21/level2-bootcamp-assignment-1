@@ -32,9 +32,6 @@ orderSchema.pre("save", async function (next) {
   if (this?.productId) {
     const product = await ProductModel.findById(this.productId);
 
-    console.log(product);
-    console.log(this.productId);
-
     // if product not found
     if (!product) {
       throw new AppError(httpStatus.NOT_FOUND, "Product not found");

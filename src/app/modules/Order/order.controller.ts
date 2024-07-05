@@ -1,3 +1,4 @@
+import httpStatus from "http-status";
 import catchAsync from "../../utils/catchAsync";
 import sendResponse from "../../utils/sendResponse";
 import { IOrder } from "./order.interface";
@@ -9,8 +10,8 @@ const createOrderController = catchAsync(async (req, res) => {
   const result = await OrderServices.createOrderService(orderData);
 
   // send response
-  sendResponse<IOrder>(res, {
-    statusCode: 201,
+  sendResponse(res, {
+    statusCode: httpStatus.CREATED,
     success: true,
     message: "Order created successfully!",
     data: result,
