@@ -15,6 +15,16 @@ router.post(
 router.get("/", ProductControllers.getAllProductsController);
 
 // get product by id route
-router.get("/:id", ProductControllers.getProductByIdController);
+router.get("/:productId", ProductControllers.getProductByIdController);
+
+// update product route
+router.patch(
+  "/:productId",
+  validateRequest(ProductsValidationSchema.updateProductSchema),
+  ProductControllers.updateProductController,
+);
+
+// delete product route
+router.delete("/:productId", ProductControllers.deleteProductController);
 
 export const ProductRoutes = router;

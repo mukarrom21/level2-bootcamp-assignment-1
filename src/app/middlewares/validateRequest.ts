@@ -7,6 +7,8 @@ const validateRequest = (schema: AnyZodObject) =>
     // parse and validate request data against the provided schema
     await schema.parseAsync({
       body: req.body,
+      query: req.query,
+      params: req.params,
     });
 
     next();

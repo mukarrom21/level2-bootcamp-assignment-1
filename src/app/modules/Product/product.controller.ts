@@ -32,8 +32,8 @@ const getAllProductsController = catchAsync(async (req, res) => {
 
 // get product by id controller
 const getProductByIdController = catchAsync(async (req, res) => {
-  const { id } = req.params;
-  const result = await ProductServices.getProductByIdService(id);
+  const { productId } = req.params;
+  const result = await ProductServices.getProductByIdService(productId);
 
   // send response
   sendResponse<IProduct | null>(res, {
@@ -44,8 +44,39 @@ const getProductByIdController = catchAsync(async (req, res) => {
   });
 });
 
+// update product controller
+const updateProductController = catchAsync(async (req, res) => {
+  const { productId } = req.params;
+  const productData = req.body;
+  const result = await ProductServices.updateProductService(productId, productData);
+
+  // send response
+  sendResponse<IProduct | null>(res, {
+    statusCode: 200,
+    success: true,
+    message: "Product updated successfully!",
+    data: result,
+  });
+});
+
+// delete product controller
+const deleteProductController = catchAsync(async (req, res) => {
+  const { productId } = req.params;
+  await ProductServices.deleteProductService(productId);
+
+  // send response
+  sendResponse<IProduct | null>(res, {
+    statusCode: 200,
+    success: true,
+    message: "Product deleted successfully!",
+    data: null,
+  });
+});
+
 export const ProductControllers = {
   createProductController,
   getAllProductsController,
   getProductByIdController,
+  updateProductController,
+  deleteProductController,
 };

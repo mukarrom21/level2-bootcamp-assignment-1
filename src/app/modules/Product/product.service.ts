@@ -20,8 +20,24 @@ const getProductByIdService = async (id: string) => {
   return product;
 };
 
+// update product service
+const updateProductService = async (id: string, product: IProduct) => {
+  const updatedProduct = await ProductModel.findByIdAndUpdate(id, product, {
+    new: true,
+  });
+  return updatedProduct;
+};
+
+// delete product service
+const deleteProductService = async (id: string) => {
+  const deletedProduct = await ProductModel.findByIdAndDelete(id);
+  return deletedProduct;
+};
+
 export const ProductServices = {
   createProductService,
   getAllProductsService,
   getProductByIdService,
+  updateProductService,
+  deleteProductService,
 };
