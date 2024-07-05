@@ -20,7 +20,7 @@ router.get("/:productId", ProductControllers.getProductByIdController);
 // update product route
 router.patch(
   "/:productId",
-  validateRequest(ProductsValidationSchema.updateProductSchema),
+  // validateRequest(ProductsValidationSchema.updateProductSchema),
   ProductControllers.updateProductController,
 );
 

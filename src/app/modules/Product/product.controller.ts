@@ -48,6 +48,8 @@ const getProductByIdController = catchAsync(async (req, res) => {
 // update product controller
 const updateProductController = catchAsync(async (req, res) => {
   const { productId } = req.params;
+  console.log(productId);
+
   const productData = req.body;
   const result = await ProductServices.updateProductService(productId, productData);
 

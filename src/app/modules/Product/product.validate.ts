@@ -64,14 +64,14 @@ const createNewProductSchema = z.object({
 
 const updateProductSchema = z.object({
   body: productValidationSchema.partial(),
-  params: z.object({
-    id: z
-      .string({
-        invalid_type_error: "Id must be a string",
-        required_error: "Id is required",
-      })
-      .min(1),
-  }),
+  // params: z.object({
+  //   id: z
+  //     .string({
+  //       invalid_type_error: "Id must be a string",
+  //       required_error: "Id is required",
+  //     })
+  //     .min(1),
+  // }),
 });
 
 export const ProductsValidationSchema = {

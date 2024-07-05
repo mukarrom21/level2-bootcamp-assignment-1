@@ -1,4 +1,3 @@
-import QueryBuilder from "../../builder/QueryBuilder";
 import { IProduct } from "./product.interface";
 import { ProductModel } from "./product.model";
 

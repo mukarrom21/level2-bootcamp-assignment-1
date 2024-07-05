@@ -32,14 +32,14 @@ const createOrderValidationSchema = z.object({
 // update order validation schema
 const updateOrderValidationSchema = z.object({
   body: orderValidationSchema,
-  params: z.object({
-    orderId: z
-      .string({
-        invalid_type_error: "Order ID must be a string",
-        required_error: "Order ID is required",
-      })
-      .min(1),
-  }),
+  // params: z.object({
+  //   orderId: z
+  //     .string({
+  //       invalid_type_error: "Order ID must be a string",
+  //       required_error: "Order ID is required",
+  //     })
+  //     .min(1),
+  // }),
 });
 
 export const OrderValidations = {

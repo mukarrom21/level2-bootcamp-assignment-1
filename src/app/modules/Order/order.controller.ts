@@ -19,7 +19,9 @@ const createOrderController = catchAsync(async (req, res) => {
 
 // get all orders controller
 const getAllOrdersController = catchAsync(async (req, res) => {
-  const result = await OrderServices.getAllOrdersService();
+  const query = req.query;
+
+  const result = await OrderServices.getAllOrdersService(query);
 
   // send response
   sendResponse<IOrder[]>(res, {
@@ -47,6 +49,7 @@ const getOrderByIdController = catchAsync(async (req, res) => {
 // update order controller
 const updateOrderController = catchAsync(async (req, res) => {
   const { orderId } = req.params;
+
   const orderData = req.body;
   const result = await OrderServices.updateOrderService(orderId, orderData);
 
